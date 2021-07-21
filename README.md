@@ -41,12 +41,16 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
+## Read the News
+
+1. After reading your greeting on the 'Program' page, click 'NewsStand' on the navbar to hit the streets and your newsstand. You will be countenanced an You can search for news by name of political person. or simply scroll throw the articles. 
+
 ## Share the News
 
-1. After reading your greeting on the 'Program' page, click 'Gallery' on the navbar to enter the Gallery. You will be countenanced an Add-Art Form which you will use to upload an image of your Art and attach pertinent information. (Add your artwork to the public/images folder in the code repository) Click 'SUBMIT' to save your artwork to the Gallery. 
-2. Your created artwork is represented by an art card which displays a miniturized image of your art. Click the green button on the card to view your artwork. Click 'Gallery' on the navbar to return to the Gallery
-3. Click the edit button on the art card to open edit mode. Make updates to your selected artwork using the edit form at the bottom of the page.
-4. To delete an artwork, Click the delete button on the art code in question.
+1. Click Submit a story. to be taken to the type writer where you can type your story. (Add your images to the public/images folder in the code repository) Click 'SUBMIT' to send your report to a fellow reporter 
+2. Your created story is represented by a newspaper which displays a miniturized image of your report. Click the green button on the card to view your report. 
+3. Click the edit button on the art card to open edit mode. Make updates to your selected story using the edit form at the bottom of the page.
+4. To delete an story, Click the delete button on the story code in question.
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thank you https://github.com/freder48 for inspiring me with your phenomenal coding
