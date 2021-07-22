@@ -56,6 +56,36 @@ class InfoPage extends React.Component {
     );
   };
 
+  addStory = () => {
+    if (this.state.newStory.headline === "") {
+      alert("A headline is required for your story.");
+    } else {
+      console.log(`Sending ${this.state.newStory.headline} to Database...`);
+      //Clear message... should say Hello!
+      //console.log(`Sending ${this.state.newArt} to DB.`);
+
+      this.props.dispatch({ type: "ADD_STORY", payload: this.state.newStory });
+      this.setState({
+        newArt: {
+          newStory: {
+            user_id: "",
+            firstName: "",
+            lastName: "",
+            title: "",
+            state: "",
+            party: "",
+            twitter: "",
+            facebook: "",
+            instagram: "",
+            imageUrl: "",
+            additionalInformation: "",
+            headline: "",
+            body: "",
+        }
+      }});
+    }
+  };
+
 
 
 
@@ -64,6 +94,9 @@ class InfoPage extends React.Component {
 
     return (
       <div>
+
+REDUX STATE: {JSON.stringify(this.props.store)}
+
         <form
       onSubmit={e => {
           e.preventDefault();

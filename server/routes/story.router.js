@@ -16,7 +16,7 @@ const {
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
-  console.log('in /api/art GET route');
+  console.log('in /api/story GET route');
   console.log('Is User logged in?', req.isAuthenticated());
   console.log('req.user:', req.user);
 
@@ -43,10 +43,10 @@ router.post('/', (req, res) => {
  // console.log('RS:', props.store)
 //console.log(this.state.user.id);
 
-  let queryText = `INSERT INTO "story" ("user_id", "first_name", "last_name", "title", "state", "party", "twitter", "facebook", "instagram", "image_url", "addtional_information", "headline", "body")
+  let queryText = `INSERT INTO "story" ("user_id", "first_name", "last_name", "title", "state", "party", "twitter", "facebook", "instagram", "image_url", "additional_information", "headline", "body")
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
   `;
-  pool.query(queryText, [story.user_id, story.firstName, story.lastName, story.title, story.state, story.party, story.twitter, story.facebook, story.instagram, story.imageUrl. story.additionalInformation, story.headline, story.body])
+  pool.query(queryText, [story.user_id, story.firstName, story.lastName, story.title, story.state, story.party, story.twitter, story.facebook, story.instagram, story.imageUrl, story.additionalInformation, story.headline, story.body])
     .then(result => {
       res.sendStatus(201);
     })

@@ -6,7 +6,7 @@ import { put, takeLatest } from "redux-saga/effects";
 // worker Saga: will be fired on "FETCH_SECRETS" actions
 //comment
 //comment
-function* artSaga() {
+function* storySaga() {
   yield takeLatest("FETCH_STORY", fetchStorySaga);
   yield takeLatest("ADD_STORY", addStorySaga);
   yield takeLatest("UPDATE_STORY", updateStorySaga);
