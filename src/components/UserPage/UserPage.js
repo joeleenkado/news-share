@@ -19,14 +19,12 @@ class UserPage extends Component {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
 
-         {/* {stories.map((story) => ( */}
 
 <table border="1">
   <thead>
     <tr>
 <td>headline</td>
 <td>Author</td>
-<td>politican's title</td>
 <td>politican first name</td>
 <td>politican last name</td>
 <td>Job Title</td>
@@ -43,14 +41,34 @@ class UserPage extends Component {
 
 
 </thead>
+<tbody>
+          {stories.map((story) => ( 
+<tr>
+  <td>{story.headline}</td>
+  <td>your username ({story.user_id})</td>
+  <td>{story.first_name}</td>
+  <td>{story.last_name}</td>
+
+  <td>{story.title}</td>
+
+
+  <td>{story.state}</td>
+
+  
+  <td>{story.party}</td>
+  <td>{story.twitter}</td>
+  <td>{story.facebook}</td>
+  <td>{story.instagram}</td>
+  <td>{story.image_url}</td>
+  
+  <td>{story.body}</td>
+  <td>{story.additional_information}</td>
+</tr>
+          ))}  
+
+  </tbody>
 
 </table>
-
-         {/* ))}  */}
-
-
-
-
       </div>
     );
   }
