@@ -16,15 +16,19 @@ class UserPage extends Component {
 
   openModal = (e, story) => {
 console.log(`in OpenModal function for story id = ${story.id}`);
-  this.setState({ show: true });
+  this.setState({ show: true }, function () {
+    this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id});
+});
+  
 
-this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id })
+//this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id })
 
 
   }
 
   hideModal = () => {
     this.setState({ show: false });
+     this.props.dispatch({type: 'FETCH_STORY'})
 };
 
 deleteFunction = (e, story) => {
@@ -37,12 +41,12 @@ deleteFunction = (e, story) => {
     const stories = this.props.store.story
     return (
       <div>
-        
-       {stories.length ? 
-         JSON.stringify(this.props.store.story[2]) : 
+
+       {/* {stories.length ? 
+         JSON.stringify(stories[2]) : 
          JSON.stringify(this.props.store)
         }
-       
+        */}
  
        
        
@@ -53,8 +57,14 @@ deleteFunction = (e, story) => {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
 
-
+        <Modal
+                    
+                    show={this.state.show}
+                    closeModalProp={this.hideModal}
+                    >
+                </Modal>
 <table border="1">
+
   <thead>
     <tr>
 <td>headline</td>
@@ -76,12 +86,7 @@ deleteFunction = (e, story) => {
 
 </thead>
 <tbody>
-<Modal
-                    
-                    show={this.state.show}
-                    closeModalProp={this.hideModal}
-                    >
-                </Modal>
+
           {stories.map((story) => ( 
 <tr key={story.id}>
 

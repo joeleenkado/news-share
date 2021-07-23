@@ -26,12 +26,20 @@ class Modal extends Component {
     render() {
       const showHideClassName = this.props.show ? ("modal display-block") : ("modal display-none")
       const { classes } = this.props
-        const story = this.props.store.story
+        const stories = this.props.store.story
+
       return (
         <div className={showHideClassName}>
           <h2>Modal</h2>
 
-{JSON.stringify(this.props.store.story)}
+          {stories.length ? 
+         JSON.stringify(stories[0].body) : 
+         JSON.stringify(this.props.store)
+        }
+       
+
+
+
 {/* REDUX STATE: {JSON.stringify(stories)} */}
 
           <button
