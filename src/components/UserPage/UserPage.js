@@ -30,12 +30,12 @@ class UserPage extends Component {
 <td>Job Title</td>
 <td>state</td>
 <td>party</td>
-<td>twitter</td>
-<td>facebook</td>
-<td>instagram</td>
 <td>image URL</td>
 <td>body</td>
 <td>additional information</td>
+<td>twitter</td>
+<td>facebook</td>
+<td>instagram</td>
 
       </tr>
 
@@ -56,13 +56,14 @@ class UserPage extends Component {
 
   
   <td>{story.party}</td>
+  <td>{story.image_url}</td>
+  <td>{story.body}</td>
+  <td>{story.additional_information}</td>
+
   <td>{story.twitter}</td>
   <td>{story.facebook}</td>
   <td>{story.instagram}</td>
-  <td>{story.image_url}</td>
   
-  <td>{story.body}</td>
-  <td>{story.additional_information}</td>
 </tr>
           ))}  
 
