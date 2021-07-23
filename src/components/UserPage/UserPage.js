@@ -19,10 +19,36 @@ class UserPage extends Component {
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
 
-        {/* {story.map((story) => ( */}
+         {/* {stories.map((story) => ( */}
+
+<table border="1">
+  <thead>
+    <tr>
+<td>headline</td>
+<td>Author</td>
+<td>politican's title</td>
+<td>politican first name</td>
+<td>politican last name</td>
+<td>Job Title</td>
+<td>state</td>
+<td>party</td>
+<td>twitter</td>
+<td>facebook</td>
+<td>instagram</td>
+<td>image URL</td>
+<td>body</td>
+<td>additional information</td>
+
+      </tr>
 
 
-      <table><tr><td></td></tr></table>
+</thead>
+
+</table>
+
+         {/* ))}  */}
+
+
 
 
       </div>
