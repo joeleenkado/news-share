@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Modal from '../Modal/Modal'
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css"
+
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
   state = {
@@ -30,6 +33,36 @@ console.log(`in OpenModal function for story id = ${story.id}`);
     this.setState({ show: false });
      this.props.dispatch({type: 'FETCH_STORY'})
 };
+
+
+deleteConfirmation = (e, story) => {
+  console.log('in deleteConfirmation function.');
+  
+    confirmAlert({
+      title: "Please Confirm",
+      message: `Would you like to delete ${story.headline}?`,
+      buttons: [
+        {
+          label: "Yes",
+          onClick: () => this.deleteFunction(e, story),
+        },
+        {
+          label: "No",
+          onClick: () => alert("Deletion Canceled"),
+        },
+      ],
+    });
+  
+};
+
+
+
+
+
+
+
+
+
 
 deleteFunction = (e, story) => {
   console.log('In deleteFunction');
@@ -115,7 +148,7 @@ deleteFunction = (e, story) => {
   <td>{story.facebook}</td>
   <td>{story.instagram}</td>
   <td><button>EDIT</button></td>
-  <td><button onClick={(e) => this.deleteFunction(e, story)}>DELETE</button></td>
+  <td><button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button></td>
 
 </tr>
           ))}  
