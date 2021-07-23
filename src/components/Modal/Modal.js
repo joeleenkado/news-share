@@ -26,10 +26,14 @@ class Modal extends Component {
     render() {
       const showHideClassName = this.props.show ? ("modal display-block") : ("modal display-none")
       const { classes } = this.props
-  
+        const story = this.props.store.story
       return (
         <div className={showHideClassName}>
           <h2>Modal</h2>
+
+{JSON.stringify(this.props.store.story)}
+{/* REDUX STATE: {JSON.stringify(stories)} */}
+
           <button
                   type="button"
                   onClick={this.props.closeModalProp}

@@ -14,9 +14,11 @@ class UserPage extends Component {
     this.props.dispatch({ type: 'FETCH_STORY' });
   }
 
-  openModal = () => {
-console.log('in OpenModal function');
+  openModal = (e, story) => {
+console.log(`in OpenModal function for story id = ${story.id}`);
   this.setState({ show: true });
+
+this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id })
 
 
   }
@@ -24,12 +26,19 @@ console.log('in OpenModal function');
   hideModal = () => {
     this.setState({ show: false });
 };
+
+deleteFunction = (e, story) => {
+  console.log('In deleteFunction');
+  this.props.dispatch({type: 'DELETE_STORY', payload: story.id})
+  
+}
   
   render() {
     const stories = this.props.store.story
     return (
       <div>
-        REDUX STATE: {JSON.stringify(stories)}
+        REDUX STATE: {JSON.stringify(this.props.store.story[0])}
+        {/* REDUX STATE2: {JSON.stringify(stories[0].first_name)} */}
 
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <p>Your ID is: {this.props.store.user.id}</p>
@@ -59,6 +68,7 @@ console.log('in OpenModal function');
 </thead>
 <tbody>
 <Modal
+                    
                     show={this.state.show}
                     closeModalProp={this.hideModal}
                     >
@@ -68,7 +78,7 @@ console.log('in OpenModal function');
 
 
 
-  <td onClick={(e) => this.openModal(e)}>{story.headline}</td>
+  <td onClick={(e) => this.openModal(e, story)}>{story.headline}</td>
   <td>your username ({story.user_id})</td>
   <td>{story.first_name}</td>
   <td>{story.last_name}</td>
@@ -90,7 +100,9 @@ console.log('in OpenModal function');
   <td>{story.twitter}</td>
   <td>{story.facebook}</td>
   <td>{story.instagram}</td>
-  
+  <td><button>EDIT</button></td>
+  <td><button onClick={(e) => this.deleteFunction(e, story)}>DELETE</button></td>
+
 </tr>
           ))}  
 

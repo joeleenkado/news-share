@@ -100,12 +100,19 @@ RETURNING "headline";`//what is the 1 here
     .then(result => {
       console.log('Story Deleted:', result.rows[0]); 
 
+// result.send(result.rows);
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+    
+  
+
+
+
+
       //res.sendStatus(200);
     })
-    .catch(error => {
-      console.log(`Error with Delete request`, error);
-      res.sendStatus(500);
-    })});
+    });
 
     router.get('/:id', rejectUnauthenticated, (req, res) => {
       // GET route code here
