@@ -37,7 +37,16 @@ deleteFunction = (e, story) => {
     const stories = this.props.store.story
     return (
       <div>
-        REDUX STATE: {JSON.stringify(this.props.store.story[0])}
+        
+       {stories.length ? 
+         JSON.stringify(this.props.store.story[2]) : 
+         JSON.stringify(this.props.store)
+        }
+       
+ 
+       
+       
+       
         {/* REDUX STATE2: {JSON.stringify(stories[0].first_name)} */}
 
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
