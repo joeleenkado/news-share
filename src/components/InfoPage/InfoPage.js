@@ -109,7 +109,7 @@ class InfoPage extends React.Component {
     return (
       <div>
 
-REDUX STATE: {JSON.stringify(this.props.store)}
+{/* REDUX STATE: {JSON.stringify(this.props.store)} */}
 
         <form
       onSubmit={e => {
