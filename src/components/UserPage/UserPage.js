@@ -2,13 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import Modal from '../Modal/Modal'
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
+  state = {
+    show: false
+  }
+  
+ 
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_STORY' });
   }
 
+  openModal = () => {
+console.log('in OpenModal function');
+  this.setState({ show: true });
+
+
+  }
+
+  hideModal = () => {
+    this.setState({ show: false });
+};
+  
   render() {
     const stories = this.props.store.story
     return (
@@ -42,9 +58,17 @@ class UserPage extends Component {
 
 </thead>
 <tbody>
+<Modal
+                    show={this.state.show}
+                    closeModalProp={this.hideModal}
+                    >
+                </Modal>
           {stories.map((story) => ( 
-<tr>
-  <td>{story.headline}</td>
+<tr key={story.id}>
+
+
+
+  <td onClick={(e) => this.openModal(e)}>{story.headline}</td>
   <td>your username ({story.user_id})</td>
   <td>{story.first_name}</td>
   <td>{story.last_name}</td>
@@ -56,7 +80,10 @@ class UserPage extends Component {
 
   
   <td>{story.party}</td>
-  <td>{story.image_url}</td>
+  <td>
+    {story.image_url}
+            
+  </td>
   <td>{story.body}</td>
   <td>{story.additional_information}</td>
 
