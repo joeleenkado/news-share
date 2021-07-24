@@ -27,15 +27,15 @@ class EditModal extends Component {
       };
 
 
-      handleInputChange = (event, inputProperty) => {
+      handleInputChange = (e, inputProperty) => {
         console.log("Handling input-change...");
         console.log("Setting state...");
     
         this.setState(
           {
-            Story: {
-              ...this.state.Story,
-              [inputProperty]: event.target.value,
+            story: {
+              ...this.state.story,
+              [inputProperty]: e.target.value,
               user_id: this.props.store.user.id,
             },
           },
