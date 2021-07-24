@@ -56,3 +56,9 @@ npm run client
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thank you https://github.com/freder48 for inspiring me with your phenomenal coding
 ## Support
 If you have suggestions or issues, please email me at [joeleen.kado@gmail.com](www.google.com)
+
+## How i feel about the experience
+when i read the email that i ewas invited to do the demo project i was so excited i couldnt sit still for the entire day. it was not until the next day that i calmed down enough to sit still and code. after looking at the fifgma i thought about the capavbilities of this goal they were vast. i thought about how i could perhaps provide a small feature that could me implemented into a larger infrstructure.
+
+## Challenges I face
+I have having a hard time with conditional rendering. I was using an item from redux to however my function was trying to use the item from redux store before redux store could be set. my solution waS TO USE a terniry so that the item only appears if it is in redux state. I was trying to move a story from redux state and have it displayed in my table. The terniry makes it so that the table only shows if redux state is present. so i never get an error saying htat it cannot render somehting that doesnt exist. because it doesnt render unless redux state has the story in it. so in effect my table waits for my component did mount to dispatch my get request for get stories. and even waits for the stories to be loaded into redux state.

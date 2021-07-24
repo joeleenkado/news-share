@@ -117,6 +117,7 @@ RETURNING "headline";`//what is the 1 here
     router.get('/:id', rejectUnauthenticated, (req, res) => {
       // GET route code here
       id = req.params.id;
+      console.log('in get details router')
       console.log('req.params', req.params);
       console.log('in /api/story/:id GET route');
       console.log('Getting details for story with id:', id)
