@@ -56,7 +56,7 @@ function* updateStorySaga(action) {
       withCredentials: true,
     };
 
-    const response = yield axios.put("api/art", action.payload, config);
+    const response = yield axios.put("api/story", action.payload, config);
 
     yield put({ type: "FETCH_STORY" });
   } catch (error) {

@@ -74,7 +74,7 @@ SET "first_name" = $1, "last_name" = $2, "title" = $3, "state" = $4, "party" = $
 WHERE "id" = $13;`;
 
   // TODO - REPLACE BELOW WITH YOUR CODE
-  pool.query(queryText, [story.firstName, story.lastName, story.title, story.state, story.party, story.twitter, story.faceook, story.instagram, story.imageUrl, story.additionalInformation, story.headline, story.body]).then( (result) => {
+  pool.query(queryText, [story.firstName, story.lastName, story.title, story.state, story.party, story.twitter, story.faceook, story.instagram, story.imageUrl, story.additionalInformation, story.headline, story.body, story.id]).then( (result) => {
             // Delete sends back an OK status, 
             // client will then ask for all the data with a GET
             res.sendStatus(200);

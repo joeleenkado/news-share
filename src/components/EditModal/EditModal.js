@@ -23,6 +23,8 @@ class EditModal extends Component {
           additionalInformation: "",
           headline: "",
           body: "",
+          id: ''
+
         },
       };
 
@@ -37,6 +39,7 @@ class EditModal extends Component {
               ...this.state.story,
               [inputProperty]: e.target.value,
               user_id: this.props.store.user.id,
+              id: this.props.store.story[0].id
             },
           },
           function () {
@@ -64,6 +67,7 @@ class EditModal extends Component {
               additionalInformation: "",
               headline: "",
               body: "",
+              id: this.props.store.story[0].id
           }
         });
       
@@ -71,11 +75,11 @@ class EditModal extends Component {
       }
 
 updateConfirmation = (e, story) => {
-    console.log('in updateConfirmation function.');
+    console.log(`in updateConfirmation function for story: ${story.id}`);
   
     confirmAlert({
       title: "Please Confirm",
-      message: `Would you like to save edits made to ${story.headline}?`,
+      message: `Would you like to save edits made to ${this.state.story.headline}?`,
       buttons: [
         {
           label: "Yes",
@@ -98,7 +102,7 @@ updateConfirmation = (e, story) => {
           //Clear message... should say Hello!
           //console.log(`Sending ${this.state.newArt} to DB.`);
     
-          this.props.dispatch({ type: "UPDATE_STORY", payload: this.state.newStory });
+          this.props.dispatch({ type: "UPDATE_STORY", payload: this.state.story });
          
         }
         this.clearInputs()
@@ -121,7 +125,7 @@ updateConfirmation = (e, story) => {
     //   const { classes } = this.props
       const {firstName, lastName, title, state, party, twitter, facebook, instagram, imageUrl, additionalInformation, headline, body} = this.state.story
 
-        const stories = this.props.store.story
+        const story = this.props.store.story
 
 
 
@@ -129,8 +133,8 @@ updateConfirmation = (e, story) => {
         <div className={showHideClassName}>
           <h2>Modal</h2>
 
-          {stories.length ? 
-         JSON.stringify(stories[0]) : 
+          {story.length ? 
+         JSON.stringify(story[0]) : 
          JSON.stringify(this.props.store)
         }
        
@@ -138,7 +142,7 @@ updateConfirmation = (e, story) => {
        <form
       onSubmit={e => {
           e.preventDefault();
-          this.updateConfirmation();
+          this.updateConfirmation(e, story);
       } }>
         <label htmlFor="firstName">
           First Name
@@ -146,7 +150,7 @@ updateConfirmation = (e, story) => {
             id="firstName"
             value={firstName}
             placeholder=""
-            onChange={(e) => this.handleInputChange(e, "firstName")}
+            onChange={(e) => this.handleInputChange(e, "firstName", story)}
           />
         </label>
         
