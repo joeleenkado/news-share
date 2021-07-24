@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import EditModal from '../EditModal/EditModal'
 import Modal from '../Modal/Modal'
+
+
+
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css"
 
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
   state = {
-    show: false
+    showStory: false,
+    showEdit: false
   }
   
  
@@ -17,9 +22,15 @@ class UserPage extends Component {
     this.props.dispatch({ type: 'FETCH_STORY' });
   }
 
-  openModal = (e, story) => {
-console.log(`in OpenModal function for story id = ${story.id}`);
-  this.setState({ show: true }, function () {
+  openStoryModal = (e, story) => {
+console.log(`in OpenStoryModal function for story id = ${story.id}`);
+  this.setState(
+    { 
+      ...this.state,
+      showStory: true 
+    }, function () {
+    console.log(`showStory state has been set: ${this.state.showStory}`);
+
     this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id});
 });
   
@@ -29,10 +40,15 @@ console.log(`in OpenModal function for story id = ${story.id}`);
 
   }
 
-  hideModal = () => {
-    this.setState({ show: false });
+  hideStoryModal = () => {
+    this.setState({ showStory: false });
      this.props.dispatch({type: 'FETCH_STORY'})
 };
+
+hideEditModal = () => {
+  this.setState({ showEdit: false });
+   this.props.dispatch({type: 'FETCH_STORY'})
+}
 
 
 deleteConfirmation = (e, story) => {
@@ -44,7 +60,7 @@ deleteConfirmation = (e, story) => {
       buttons: [
         {
           label: "Yes",
-          onClick: () => this.deleteFunction(e, story),
+          onClick: () => this.delete(e, story),
         },
         {
           label: "No",
@@ -64,11 +80,29 @@ deleteConfirmation = (e, story) => {
 
 
 
-deleteFunction = (e, story) => {
+delete = (e, story) => {
   console.log('In deleteFunction');
   this.props.dispatch({type: 'DELETE_STORY', payload: story.id})
   
 }
+
+
+
+openEditModal = (e, story) => {
+  console.log(`in OpenEditModal function for story id = ${story.id}`);
+    this.setState(
+      {
+      ...this.state,
+      showEdit: true 
+    }, function () {
+    console.log(`showEdit state has been set: ${this.state.showEdit}`);
+    
+      this.props.dispatch({type: 'FETCH_DETAILS', payload: story.id});
+  });
+
+
+}
+
   
   render() {
     const stories = this.props.store.story
@@ -92,10 +126,16 @@ deleteFunction = (e, story) => {
 
         <Modal
                     
-                    show={this.state.show}
-                    closeModalProp={this.hideModal}
+                    showStoryProp={this.state.showStory}
+                    closeStoryProp={this.hideStoryModal}
                     >
                 </Modal>
+                <EditModal
+                showEditProp={this.state.showEdit}
+                closeEditProp={this.hideEditModal}
+                >
+
+                </EditModal>
 <table border="1">
 
   <thead>
@@ -125,7 +165,7 @@ deleteFunction = (e, story) => {
 
 
 
-  <td onClick={(e) => this.openModal(e, story)}>{story.headline}</td>
+  <td onClick={(e) => this.openStoryModal(e, story)}>{story.headline}</td>
   <td>your username ({story.user_id})</td>
   <td>{story.first_name}</td>
   <td>{story.last_name}</td>
@@ -147,7 +187,7 @@ deleteFunction = (e, story) => {
   <td>{story.twitter}</td>
   <td>{story.facebook}</td>
   <td>{story.instagram}</td>
-  <td><button>EDIT</button></td>
+  <td><button onClick={(e) => this.openEditModal(e, story)}>EDIT</button></td>
   <td><button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button></td>
 
 </tr>

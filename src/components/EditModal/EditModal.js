@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
-import './Modal.css';
+import './EditModal.css';
 
 
 
-class Modal extends Component {
+class EditModal extends Component {
     state = {
       
       //if inputs are empty the booleans will flip to true, error & helperText on inputs
-      showStory: false,
+      showEdit: false,
       
     }
   
@@ -24,7 +24,7 @@ class Modal extends Component {
     // }//end handleModalChange
   
     render() {
-      const showHideClassName = this.props.showStoryProp ? ("modal display-block") : ("modal display-none")
+      const showHideClassName = this.props.showEditProp ? ("modal display-block") : ("modal display-none")
       const { classes } = this.props
         const stories = this.props.store.story
 
@@ -33,7 +33,7 @@ class Modal extends Component {
           <h2>Modal</h2>
 
           {stories.length ? 
-         JSON.stringify(stories[0].body) : 
+         JSON.stringify(stories[0]) : 
          JSON.stringify(this.props.store)
         }
        
@@ -44,7 +44,7 @@ class Modal extends Component {
 
           <button
                   type="button"
-                  onClick={this.props.closeStoryProp}
+                  onClick={this.props.closeEditProp}
                 //   className={classes.button}
                 >
                   CLOSE
@@ -54,5 +54,5 @@ class Modal extends Component {
     }
   };
   
-  export default connect(mapStoreToProps)(Modal);
+  export default connect(mapStoreToProps)(EditModal);
   
