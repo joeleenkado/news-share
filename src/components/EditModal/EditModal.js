@@ -26,6 +26,7 @@ class EditModal extends Component {
           id: ''
 
         },
+        
       };
 
 
@@ -106,6 +107,7 @@ updateConfirmation = (e, story) => {
          
         }
         this.clearInputs()
+        this.props.closeEditProp()
       };
     
     
