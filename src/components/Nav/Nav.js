@@ -18,10 +18,16 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
+
       <Link to="/home">
-        {/* <h2 className="nav-title">Reporter Response</h2> */}
-      <img src="../../../public/images/logo.jpg" alt="blackBirdLogo"></img>
+        
+      <div id='navLogoContainer'>
+      <img id="blackBirdLogo" src="/images/logo.jpg" alt="blackBirdLogo"></img>
+      </div>
       </Link>
+
+               <h2 className="nav-title">Reporter Response</h2> 
+
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>
           {/* Show this link if they are logged in or not,

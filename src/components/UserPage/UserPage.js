@@ -147,7 +147,7 @@ openEditModal = (e, story) => {
 
 <div className='card' key={story.id}>
 
-<div onClick={(e) => this.openStoryModal(e, story)}>
+<div id="headline" onClick={(e) => this.openStoryModal(e, story)}>
   {story.headline} 
   </div>
   your username ({story.user_id})
