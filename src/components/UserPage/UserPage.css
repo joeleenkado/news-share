@@ -1,7 +1,24 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  ;
+.cardContainer {
+    display: grid;
+    border: 3px solid #fff;
+    padding: 20px;  
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: max-content;
+    height: 100vh; */
+    grid-gap: 20px;
 }
+
+
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 75%;
+    height: 100%; 
+  /* no need to set height as height is controled my the grid container */
+  /* border: 2px solid red;    ; */
+ text-align: center;
+ margin: auto
+} 
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);

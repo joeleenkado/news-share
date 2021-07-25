@@ -141,14 +141,15 @@ openEditModal = (e, story) => {
 
 
 
+                <div className='cardContainer'>
 
           {stories.map((story) => ( 
-<div className='card' key={story.id} onClick={(e) => this.openStoryModal(e, story)}>
 
+<div className='card' key={story.id}>
 
-
-  {story.headline}
-  <br/>
+<div onClick={(e) => this.openStoryModal(e, story)}>
+  {story.headline} 
+  </div>
   your username ({story.user_id})
   <br/>
 
@@ -185,16 +186,18 @@ openEditModal = (e, story) => {
   {story.facebook}
   <br/>
 
-  <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
-  <br/>
 
   {story.instagram}
+  <br/>
+  <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
   <br/>
 
   <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
 </div>
 
-          ))}  
+          ))}
+
+          </div>  
 
   
 
