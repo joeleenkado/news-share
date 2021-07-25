@@ -4,7 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import EditModal from '../EditModal/EditModal'
 import Modal from '../Modal/Modal'
-
+import './UserPage.css'
 
 
 import { confirmAlert } from "react-confirm-alert";
@@ -136,66 +136,69 @@ openEditModal = (e, story) => {
                 >
 
                 </EditModal>
-<table border="1">
-
-  <thead>
-    <tr>
-<td>headline</td>
-<td>Author</td>
-<td>politican first name</td>
-<td>politican last name</td>
-<td>Job Title</td>
-<td>state</td>
-<td>party</td>
-<td>image URL</td>
-<td>body</td>
-<td>additional information</td>
-<td>twitter</td>
-<td>facebook</td>
-<td>instagram</td>
-
-      </tr>
-
-
-</thead>
-<tbody>
-
-          {stories.map((story) => ( 
-<tr key={story.id}>
-
-
-
-  <td onClick={(e) => this.openStoryModal(e, story)}>{story.headline}</td>
-  <td>your username ({story.user_id})</td>
-  <td>{story.first_name}</td>
-  <td>{story.last_name}</td>
-
-  <td>{story.title}</td>
-
-
-  <td>{story.state}</td>
 
   
-  <td>{story.party}</td>
-  <td>
+
+
+
+
+          {stories.map((story) => ( 
+<div className='card' key={story.id} onClick={(e) => this.openStoryModal(e, story)}>
+
+
+
+  {story.headline}
+  <br/>
+  your username ({story.user_id})
+  <br/>
+
+  {story.first_name}
+  <br/>
+
+  {story.last_name}
+  <br/>
+
+  {story.title}
+  <br/>
+
+
+  {story.state}
+  <br/>
+
+  
+  {story.party}
+  <br/>
+  
     {story.image_url}
             
-  </td>
-  <td>{story.body}</td>
-  <td>{story.additional_information}</td>
+    <br/>
+  
+  {story.body}
+  <br/>
 
-  <td>{story.twitter}</td>
-  <td>{story.facebook}</td>
-  <td>{story.instagram}</td>
-  <td><button onClick={(e) => this.openEditModal(e, story)}>EDIT</button></td>
-  <td><button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button></td>
+  {story.additional_information}
+  <br/>
 
-</tr>
+  {story.twitter}
+  <br/>
+
+  {story.facebook}
+  <br/>
+
+  <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
+  <br/>
+
+  {story.instagram}
+  <br/>
+
+  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
+</div>
+
           ))}  
 
-  </tbody>
+  
 
-</table>
+
       </div>
     );
   }
