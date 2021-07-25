@@ -3,7 +3,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import './EditModal.css';
 import { confirmAlert } from "react-confirm-alert";
-
+import Loading from '../Loading/Loading';
 
 
 
@@ -138,7 +138,10 @@ updateConfirmation = (e, story) => {
          JSON.stringify(this.props.store)
         }
        
-
+//i need to put a ternairy here to run the form only is there is a story .length
+      {story.length ?
+      
+      
        <form
       onSubmit={e => {
           e.preventDefault();
@@ -149,7 +152,7 @@ updateConfirmation = (e, story) => {
           <input
             id="firstName"
             value={firstName}
-            placeholder=""
+            placeholder={story[0].first_name}
             onChange={(e) => this.handleInputChange(e, "firstName", story)}
           />
         </label>
@@ -160,7 +163,7 @@ updateConfirmation = (e, story) => {
           <input
             id="lastName"
             value={lastName}
-            placeholder=""
+            placeholder={story[0].last_name}
             onChange={(e) => this.handleInputChange(e, "lastName")}
           />
         </label>   
@@ -170,7 +173,7 @@ updateConfirmation = (e, story) => {
           <input
             id="title"
             value={title}
-            placeholder=""
+            placeholder={story[0].title}
             onChange={(e) => this.handleInputChange(e, "title")}
           />
         </label>
@@ -180,7 +183,7 @@ updateConfirmation = (e, story) => {
           <input
             id="state"
             value={state}
-            placeholder=""
+            placeholder={story[0].state}
             onChange={(e) => this.handleInputChange(e, "state")}
           />
         </label>
@@ -192,7 +195,7 @@ updateConfirmation = (e, story) => {
           <input
             id="party"
             value={party}
-            placeholder=""
+            placeholder={story[0].party}
             onChange={(e) => this.handleInputChange(e, "party")}
           />
         </label>
@@ -203,7 +206,7 @@ updateConfirmation = (e, story) => {
           <input
             id="twitter"
             value={twitter}
-            placeholder=""
+            placeholder={story[0].twitter}
             onChange={(e) => this.handleInputChange(e, "twitter")}
           />
         </label>
@@ -214,7 +217,7 @@ updateConfirmation = (e, story) => {
           <input
             id="facebook"
             value={facebook}
-            placeholder=""
+            placeholder={story[0].facebook}
             onChange={(e) => this.handleInputChange(e, "facebook")}
           />
         </label>
@@ -224,7 +227,7 @@ updateConfirmation = (e, story) => {
           <input
             id="instagram"
             value={instagram}
-            placeholder=""
+            placeholder={story[0].instagram}
             onChange={(e) => this.handleInputChange(e, "instagram")}
           />
         </label>
@@ -236,7 +239,7 @@ updateConfirmation = (e, story) => {
           <input
             id="imageUrl"
             value={imageUrl}
-            placeholder=""
+            placeholder={story[0].image_url}
             onChange={(e) => this.handleInputChange(e, "imageUrl")}
           />
         </label> 
@@ -246,7 +249,7 @@ updateConfirmation = (e, story) => {
           <input
             id="additionalInformation"
             value={additionalInformation}
-            placeholder=""
+            placeholder={story[0].additional_information}
             onChange={(e) => this.handleInputChange(e, "additionalInformation")}
           />
         </label>
@@ -256,7 +259,7 @@ updateConfirmation = (e, story) => {
           <input
             id="headline"
             value={headline}
-            placeholder=""
+            placeholder={story[0].headline}
             onChange={(e) => this.handleInputChange(e, "headline")}
           />
         </label>
@@ -266,7 +269,7 @@ updateConfirmation = (e, story) => {
           <input
             id="body"
             value={body}
-            placeholder=""
+            placeholder={story[0].body}
             onChange={(e) => this.handleInputChange(e, "body")}
           />
         </label>
@@ -275,9 +278,10 @@ updateConfirmation = (e, story) => {
         
 
         <button>Update</button>
-      </form>
+      </form> :
+      <Loading/>
 
-
+}
 {/* REDUX STATE: {JSON.stringify(stories)} */}
 
           <button
