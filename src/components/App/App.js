@@ -13,9 +13,9 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import LibraryPage from '../LibraryPage/LibraryPage';
+import NewsPage from '../NewsPage/NewsPage';
+import TypewriterPage from '../TypewriterPage/TypewriterPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -34,14 +34,14 @@ class App extends Component {
           <Nav />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-            <Redirect exact from="/" to="/home" />
+            <Redirect exact from="/" to="/library" />
 
             {/* Visiting localhost:3000/about will show the about page. */}
             <Route
               // shows AboutPage at all times (logged in or not)
               exact
-              path="/about"
-              component={AboutPage}
+              path="/library"
+              component={LibraryPage}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.
@@ -51,15 +51,15 @@ class App extends Component {
             <ProtectedRoute
               // logged in shows UserPage else shows LoginPage
               exact
-              path="/user"
-              component={UserPage}
+              path="/news"
+              component={NewsPage}
             />
 
             <ProtectedRoute
               // logged in shows InfoPage else shows LoginPage
               exact
-              path="/info"
-              component={InfoPage}
+              path="/typewriter"
+              component={TypewriterPage}
             />
 
             {/* When a value is supplied for the authRedirect prop the user will
@@ -72,7 +72,7 @@ class App extends Component {
               exact
               path="/login"
               component={LoginPage}
-              authRedirect="/user"
+              authRedirect="/library"
             />
             <ProtectedRoute
               // with authRedirect:
@@ -81,7 +81,7 @@ class App extends Component {
               exact
               path="/registration"
               component={RegisterPage}
-              authRedirect="/user"
+              authRedirect="/news"
             />
             <ProtectedRoute
               // with authRedirect:
@@ -89,8 +89,8 @@ class App extends Component {
               // - else shows LandingPage at "/home"
               exact
               path="/home"
-              component={LandingPage}
-              authRedirect="/user"
+              component={LibraryPage}
+              // authRedirect="/user"
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

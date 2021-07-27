@@ -7,6 +7,7 @@ const userReducer = (state = {}, action) => {
     default:
       return state;
   }
+  
 };
 
 // user will be on the redux state at:

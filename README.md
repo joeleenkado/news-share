@@ -45,7 +45,11 @@ npm run client
 
 1. After reading your greeting on the 'Program' page, click 'NewsStand' on the navbar to hit the streets and your newsstand. You will be countenanced an You can search for news by name of political person. or simply scroll throw the articles. 
 
+## You are a Reporter. Do your Reasarch
+on the homepage you will find various politicians with links to their political publications and social media
+
 ## Share the News
+
 
 1. Click Submit a story. to be taken to the type writer where you can type your story. (Add your images to the public/images folder in the code repository) Click 'SUBMIT' to send your report to a fellow reporter 
 2. Your created story is represented by a newspaper which displays a miniturized image of your report. Click the green button on the card to view your report. 
@@ -62,3 +66,5 @@ when i read the email that i ewas invited to do the demo project i was so excite
 
 ## Challenges I face
 I have having a hard time with conditional rendering. I was using an item from redux to however my function was trying to use the item from redux store before redux store could be set. my solution waS TO USE a terniry so that the item only appears if it is in redux state. I was trying to move a story from redux state and have it displayed in my table. The terniry makes it so that the table only shows if redux state is present. so i never get an error saying htat it cannot render somehting that doesnt exist. because it doesnt render unless redux state has the story in it. so in effect my table waits for my component did mount to dispatch my get request for get stories. and even waits for the stories to be loaded into redux state.
+
+Another hurdle I overcame was manipulating the ProPublica API. I wanted to access the api through a get request,nso that I could put the datas object in redux state and the append the data to the dom my .mapping cards. like I did for the self published stroies. However I had to learn how to do get requests from the terminal then take the echo the response into a .json file which I could then map through as I wanted.

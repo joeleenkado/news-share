@@ -20,7 +20,7 @@ import Senator from '../Senator/Senator.json'
 // you can make it a class component like:
 
 
-class InfoPage extends React.Component {
+class TypewriterPage extends React.Component {
 
   state = {
     newStory: {
@@ -272,4 +272,4 @@ class InfoPage extends React.Component {
   }
 }
 
-export default connect(mapStoreToProps)(InfoPage);
+export default connect(mapStoreToProps)(TypewriterPage);
