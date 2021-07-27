@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Senator from '../Senator/Senator.json'
-
+import './LibraryPage.css'
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -15,6 +15,8 @@ class Library extends Component {
   render() {
     return (
       <div className="cardContainer">
+      <h3 id="welcomeMessage">Welcome {this.props.store.user.username}!
+      Here is the Library where you can research Politicians. Once you are ready, head over to the Typewriter to submit your story.</h3>
 
 {Senator.results[0].members.map((senator) => ( 
 

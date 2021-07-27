@@ -30,11 +30,14 @@ class Modal extends Component {
 
       return (
         <div className={showHideClassName}>
-          <h2>Modal</h2>
 
           {stories.length ? 
-         JSON.stringify(stories[0].body) : 
-         JSON.stringify(this.props.store)
+         (
+            JSON.stringify(stories[0].body)
+            )
+
+          : 
+         (JSON.stringify(this.props.store))
         }
        
 

@@ -51,7 +51,7 @@ const Nav = (props) => {
             
             {/* <LogOutButton className="nav-link" /> */}
             <Link className="nav-link" to="/news">
-              News
+              News Room
             </Link>
           
           </>

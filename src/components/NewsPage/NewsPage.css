@@ -6,11 +6,14 @@
     /* grid-template-rows: max-content;
     height: 100vh; */
     grid-gap: 20px;
-    background-color: teal;
+    background-color: black;
     /* margin: 10px; */
 
 }
 
+#welcomeMessage {
+  color: #f07900;
+}
 
 .card {
     background-color: white;

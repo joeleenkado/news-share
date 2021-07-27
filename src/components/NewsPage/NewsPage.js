@@ -119,9 +119,8 @@ openEditModal = (e, story) => {
        
         {/* REDUX STATE2: {JSON.stringify(stories[0].first_name)} */}
 
-        <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <p>Your ID is: {this.props.store.user.id}</p>
-        <LogOutButton className="log-in" />
+        {/* <p>Your ID is: {this.props.store.user.id}</p>
+        <LogOutButton className="log-in" /> */}
 
         <Modal
                     
@@ -141,6 +140,7 @@ openEditModal = (e, story) => {
 
 
                 <div className='cardContainer'>
+                <h3 id="welcomeMessage">Click on a Headline to read your story</h3>
 
           {stories.map((story) => ( 
 
@@ -149,8 +149,8 @@ openEditModal = (e, story) => {
 <div id="headline" onClick={(e) => this.openStoryModal(e, story)}>
   {story.headline} 
   </div>
-  your username ({story.user_id})
-  <br/>
+  {/* your username ({story.user_id})
+  <br/> */}
 
   {story.first_name}
   <br/>
@@ -191,7 +191,7 @@ openEditModal = (e, story) => {
   <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
   <br/>
 
-  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button> */}
+  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
 </div>
 
           ))}

@@ -96,10 +96,10 @@ class TypewriterPage extends React.Component {
     const {firstName, lastName, title, state, party, twitter, facebook, instagram, imageUrl, additionalInformation, headline, body} = this.state.newStory
 
     return (
-      <div>
+      <div className="card">
 
 {/* REDUX STATE: {JSON.stringify(this.props.store)} */}
-
+<h3 id='welcomeMessage'>Once you have submitted your story, head over to the News Room to see view your story.</h3>
         <form
       onSubmit={e => {
           e.preventDefault();
@@ -143,7 +143,8 @@ class TypewriterPage extends React.Component {
           <input
             id="state"
             value={state}
-            placeholder=""
+            placeholder="ex: MN"
+            maxLength='2'
             onChange={(e) => this.handleInputChange(e, "state")}
           />
         </label>
@@ -156,7 +157,7 @@ class TypewriterPage extends React.Component {
           <input
             id="party"
             value={party}
-            placeholder=""
+            placeholder="ex: D"
             onChange={(e) => this.handleInputChange(e, "party")}
           />
         </label>
@@ -212,7 +213,7 @@ class TypewriterPage extends React.Component {
 
         <label htmlFor="additionalInformation">
           Additional Information
-          <input
+          <textarea
             id="additionalInformation"
             value={additionalInformation}
             placeholder=""
@@ -225,8 +226,10 @@ class TypewriterPage extends React.Component {
           Headline
           <input
             id="headline"
+            name="headline"
             value={headline}
             placeholder=""
+            rows="10"
             onChange={(e) => this.handleInputChange(e, "headline")}
           />
         </label>
@@ -238,7 +241,7 @@ class TypewriterPage extends React.Component {
 
             id="body"
             value={body}
-            rows='4'
+            rows='20'
             placeholder="Write your story here."
             onChange={(e) => this.handleInputChange(e, "body")}
           />
