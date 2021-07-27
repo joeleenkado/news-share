@@ -1,24 +1,7 @@
 import React from 'react';
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import { connect } from "react-redux";
-import axios from 'axios'
-import Senator from '../Senator/Senator.json'
-
-
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-
-// const InfoPage = () => (
-//   <div>
-//     <p>Info Page</p>
-//   </div>
-// );
-
-// If you needed to add local state or other things,
-// you can make it a class component like:
-
+// import Senator from '../Senator/Senator.json'
 
 class TypewriterPage extends React.Component {
 
@@ -131,7 +114,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "firstName")}
           />
         </label>
-        
+        <br/>
 
         <label htmlFor="lastName">
           Last Name
@@ -142,6 +125,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "lastName")}
           />
         </label>   
+        <br/>
 
         <label htmlFor="title">
           Title
@@ -152,7 +136,8 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "title")}
           />
         </label>
-        
+        <br/>
+
         <label htmlFor="state">
           State
           <input
@@ -163,6 +148,7 @@ class TypewriterPage extends React.Component {
           />
         </label>
 
+        <br/>
 
 
         <label htmlFor="party">
@@ -174,6 +160,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "party")}
           />
         </label>
+        <br/>
 
 
         <label htmlFor="twitter">
@@ -186,6 +173,7 @@ class TypewriterPage extends React.Component {
           />
         </label>
 
+        <br/>
 
         <label htmlFor="facebook">
           Facebook
@@ -196,6 +184,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "facebook")}
           />
         </label>
+        <br/>
 
         <label htmlFor="instagram">
           Instagram 
@@ -207,6 +196,7 @@ class TypewriterPage extends React.Component {
           />
         </label>
 
+        <br/>
 
 
         <label htmlFor="imageUrl">
@@ -218,6 +208,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "imageUrl")}
           />
         </label> 
+        <br/>
 
         <label htmlFor="additionalInformation">
           Additional Information
@@ -228,6 +219,7 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "additionalInformation")}
           />
         </label>
+        <br/>
 
         <label htmlFor="headline">
           Headline
@@ -238,13 +230,16 @@ class TypewriterPage extends React.Component {
             onChange={(e) => this.handleInputChange(e, "headline")}
           />
         </label>
+        <br/>
 
         <label htmlFor="body">
           Body
-          <input
+          <textarea
+
             id="body"
             value={body}
-            placeholder=""
+            rows='4'
+            placeholder="Write your story here."
             onChange={(e) => this.handleInputChange(e, "body")}
           />
         </label>

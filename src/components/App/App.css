@@ -9,7 +9,11 @@ body {
   margin: 0px;
   height: 100%; 
   background-color: #f3f2f2;
-  background-image: url("../../building.jpg");
+  /* background-image: url("../../srcImages/building.jpg"); */
+}
+
+#main {
+  background-color: black;
 }
 
 img {

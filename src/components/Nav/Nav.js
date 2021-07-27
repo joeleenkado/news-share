@@ -23,10 +23,10 @@ const Nav = (props) => {
         
       <div id='navLogoContainer'>
       <img id="blackBirdLogo" src="/images/logo.jpg" alt="blackBirdLogo"></img>
-      </div>
+    </div>
       </Link>
 
-               <h2 className="nav-title">Reporter Response</h2> 
+               <h2 className="nav-title">BlackBirds.io</h2> 
 
       <div className="nav-right">
        

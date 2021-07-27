@@ -1,0 +1,22 @@
+.header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* margin: 0px; */
+    /* min-width: 40%; */
+  min-height: 60%; 
+    background-color: #762a2a;
+    background-image: url("../../srcImages/building.jpg"); 
+    /* margin: 0px; */
+margin-top: 0; 
+padding: 0; 
+background-size: fill  
+  }
+
+/* #bg {
+position: fixed; 
+  top: 0; 
+  left: 0;  */
+	
+  /* Preserve aspet ratio */
+  /* min-width: 100%;
+  min-height: 100%;
+} */

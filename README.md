@@ -8,7 +8,7 @@
 
 _Duration: 200hrs_
 
-We want to hold politicians accountable. the best way to ensure accountability is to use publicity. Lets make the activities of politicians that are at times witnessed by few, shown to everyone. 
+We want to hold politicians accountable.  the best way to ensure accountability is to use publicity. Lets make the activities of politicians that are at times witnessed by few, shown to everyone. 
 
 Be the reporter. Do you have a story you want to share. Simply use the app to compose your story with our text editor. than send it to a fellow reporter (anyone who also has an account on our app). And if a fellow reporter vouches for the authenticity of your report (clicks approve) your story will be added to the news stand.
 
