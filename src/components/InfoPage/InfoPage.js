@@ -1,6 +1,8 @@
 import React from 'react';
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import { connect } from "react-redux";
+import axios from 'axios'
+import Senator from '../Senator/Senator.json'
 
 
 // This is one of our simplest components
@@ -36,8 +38,12 @@ class InfoPage extends React.Component {
       headline: "",
       body: "",
     },
-  };
+  }; 
 
+  componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_MEMBER' });
+  }
+  
   handleInputChange = (event, inputProperty) => {
     console.log("Handling input-change...");
     console.log("Setting state...");

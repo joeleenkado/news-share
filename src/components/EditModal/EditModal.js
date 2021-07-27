@@ -75,9 +75,18 @@ class EditModal extends Component {
       
       }
 
+      cancelUpdate = (e) => {
+        alert("Update Canceled")
+        this.clearInputs()
+      }
+
 updateConfirmation = (e, story) => {
     console.log(`in updateConfirmation function for story: ${story.id}`);
+    if (this.state.story.headline === "") {
+        alert("A headline is required for your story.");
   
+    } else {
+
     confirmAlert({
       title: "Please Confirm",
       message: `Would you like to save edits made to ${this.state.story.headline}?`,
@@ -88,24 +97,23 @@ updateConfirmation = (e, story) => {
         },
         {
           label: "No",
-          onClick: () => alert("Update Canceled"),
+          onClick: (e) => this.cancelUpdate(e) 
+          
+          
         },
       ],
     });
-  
+}
 }
 
       updateStory = () => {
-        if (this.state.story.headline === "") {
-          alert("A headline is required for your story.");
-        } else {
           console.log(`Sending updated ${this.state.story.headline} to Database...`);
           //Clear message... should say Hello!
           //console.log(`Sending ${this.state.newArt} to DB.`);
     
           this.props.dispatch({ type: "UPDATE_STORY", payload: this.state.story });
          
-        }
+        
         this.clearInputs()
         this.props.closeEditProp()
       };

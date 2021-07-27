@@ -5,7 +5,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import EditModal from '../EditModal/EditModal'
 import Modal from '../Modal/Modal'
 import './UserPage.css'
-
+import Senator from '../Senator/Senator.json'
 
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css"
@@ -159,7 +159,7 @@ openEditModal = (e, story) => {
   {story.last_name}
   <br/>
 
-  {story.title}
+   {story.title}
   <br/>
 
 
@@ -192,13 +192,74 @@ openEditModal = (e, story) => {
   <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
   <br/>
 
-  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
+  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button> */}
 </div>
 
           ))}
 
           </div>  
+<div className="cardContainer">
 
+{Senator.results[0].members.map((senator) => ( 
+
+<div className='card' key={senator.id}>
+
+<div id="headline" onClick={(e) => this.openStoryModal(e, senator)}>
+  {/* {story.headline}  */}
+  </div>
+  {/* your username ({story.user_id}) */}
+  {/* <br/> */}
+
+  {senator.first_name}
+  <br/>
+
+  {senator.last_name}
+  <br/>
+
+   {senator.title} 
+   <br/> 
+
+
+  {/* {story.state} */}
+  {/* <br/> */}
+
+  
+  {/* {story.party} */}
+  {/* <br/> */}
+  
+    {/* {story.image_url} */}
+            
+    {/* <br/> */}
+  
+  {/* {story.body} */}
+  {/* <br/> */}
+
+  {/* {story.additional_information} */}
+  {/* <br/> */}
+
+  {/* {story.twitter} */}
+  {/* <br/> */}
+
+  {/* {story.facebook} */}
+  {/* <br/> */}
+
+
+  {/* {story.instagram} */}
+  {/* <br/> */}
+  {/* <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button> */}
+  {/* <br/> */}
+
+  {/* <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button> */}
+</div>
+
+          ))}
+
+
+
+
+
+
+</div>
   
 
 
