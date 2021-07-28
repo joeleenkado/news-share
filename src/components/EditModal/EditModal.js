@@ -140,19 +140,21 @@ updateConfirmation = (e, story) => {
 
 
       return (
-        <div className={showHideClassName}>
-          <h2>Modal</h2>
+        <div className={`${showHideClassName} center`}
+        // id='center'
+        >
+
+          <h3 id="welcomeMessage">Update your story using the form below. Or click 'CLOSE' to return to the News Room</h3>
 
           {story.length ? 
          JSON.stringify(story[0]) : 
          JSON.stringify(this.props.store)
         }
        
-//i need to put a ternairy here to run the form only is there is a story .length
       {story.length ?
       
       
-       <form
+       <form className=""
       onSubmit={e => {
           e.preventDefault();
           this.updateConfirmation(e, story);
@@ -287,13 +289,13 @@ updateConfirmation = (e, story) => {
        
         
 
-        <button>Update</button>
+        <button name="update">UPDATE</button>
       </form> :
       <Loading/>
 
 }
 {/* REDUX STATE: {JSON.stringify(stories)} */}
-
+<br/>
           <button
                   type="button"
                   onClick={this.props.closeEditProp}

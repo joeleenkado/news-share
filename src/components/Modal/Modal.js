@@ -29,7 +29,9 @@ class Modal extends Component {
         const stories = this.props.store.story
 
       return (
-        <div className={showHideClassName}>
+        <div className={`${showHideClassName} center`}
+        // id="center"
+        >
 
           {stories.length ? 
          (

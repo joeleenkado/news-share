@@ -190,8 +190,9 @@ openEditModal = (e, story) => {
   <br/>
   <button onClick={(e) => this.openEditModal(e, story)}>EDIT</button>
   <br/>
+  <br/>
 
-  <button onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
+  <button className='deleteButton' onClick={(e) => this.deleteConfirmation(e, story)}>DELETE</button>
 </div>
 
           ))}
