@@ -71,3 +71,5 @@ package-lock.json
 soloREADME.md
 
 .OriginalTable.js
+
+.prettierrc

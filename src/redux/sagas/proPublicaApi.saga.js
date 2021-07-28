@@ -8,7 +8,6 @@ import { put, takeLatest } from "redux-saga/effects";
 //comment
 let apiKey = process.env.PROPUBLICA_API_KEY;
 
-
 function* apiSaga() {
   yield takeLatest("FETCH_MEMBER", fetchMemberSaga);
   // yield takeLatest("ADD_STORY", addStorySaga);
@@ -21,20 +20,17 @@ function* fetchMemberSaga() {
   console.log("In fetchMemberSaga...");
   try {
     const config = {
-
-      
-      headers: { "Content-Type": "application/json", 'X-API-Key': apiKey, 'Authorization': 'apiKey' },
+      headers: {
+        "Content-Type": "application/json",
+        "X-API-Key": apiKey,
+        Authorization: "apiKey",
+      },
       withCredentials: true,
-      
-      
-
-
-      
     };
 
     const response = yield axios.get("api/proPublicaApi", config);
-const title = response.results[0].members[0].title
-console.log(title)
+    const title = response.results[0].members[0].title;
+    console.log(title);
     yield put({ type: "SET_MEMBER", payload: title });
   } catch (error) {
     console.log("Member GET request failed", error);

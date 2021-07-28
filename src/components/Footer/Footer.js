@@ -1,6 +1,5 @@
-import React from 'react';
-import './Footer.css';
-
+import React from "react";
+import "./Footer.css";
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -9,11 +8,6 @@ import './Footer.css';
 
 //  const Footer = () => <footer>&copy; Joeleen Kado 2021</footer>;
 
-
- const Footer = () => <footer id="footer">&copy; Joeleen Kado 2021</footer>;
-
-
-
-
+const Footer = () => <footer id="footer">&copy; Joeleen Kado 2021</footer>;
 
 export default Footer;

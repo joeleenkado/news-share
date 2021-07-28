@@ -61,10 +61,11 @@ Another hurdle I overcame was manipulating the ProPublica API. I wanted to acces
 
 ## Acknowledgement
 
-Thanks to [Prime Digital Academy](www.primeacademy.io) who trained me as a Full Stack Software Engineer. Thank you https://github.com/freder48 for inspiring me with your phenomenal coding
+Thank you for taking the time to experience my work.
+Thanks to [Prime Digital Academy](www.primeacademy.io) for training me as a Full Stack Software Engineer. 
 
 ## Support
 
-If you have suggestions or issues, please email me at [joeleen.kado@gmail.com](www.google.com)
+If you have questions, comments, or issues, please email me at [joeleen.kado@gmail.com](www.google.com)
 
 
