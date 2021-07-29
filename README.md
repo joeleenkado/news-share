@@ -15,7 +15,6 @@ We want to hold politicians accountable. The best way to ascertain whether one i
 
 ### Prerequisites
 
-- [Material-UI](https://material-ui.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Nodemon](https://nodemon.io/)
 - [React.js](https://reactjs.org/)
