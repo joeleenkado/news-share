@@ -24,7 +24,7 @@ We want to hold politicians accountable. The best way to ascertain whether one i
 
 ### Development Setup Instructions
 
-Create database entitled 'allyship'. Popluate your database with tables by running the queries provided in your `data.sql` file. Start the server.
+Create database entitled `allyship`. Popluate your database with tables by running the queries provided in your `database.sql` file. Start the server.
 
 ```
 - Run `npm install`
