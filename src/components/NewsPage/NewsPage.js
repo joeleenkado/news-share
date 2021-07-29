@@ -111,8 +111,9 @@ class NewsPage extends Component {
         ></EditModal>
 
         <div className="cardContainer">
+          {stories.length ? ( 
           <h3 id="welcomeMessage">Click on a Headline to read your story</h3>
-
+          ) : (<h3 id="welcomeMessage">You have not yet writtien any stories. Step one is to head over to the Library.</h3>)}
           {stories.map((story) => (
             <div className="card" key={story.id}>
               <div id="headline" onClick={(e) => this.openStoryModal(e, story)}>
