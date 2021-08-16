@@ -22,9 +22,9 @@ class TypewriterPage extends React.Component {
     },
   };
 
-  componentDidMount() {
-    this.props.dispatch({ type: "FETCH_MEMBER" });
-  }
+  // componentDidMount() {
+  //   this.props.dispatch({ type: "FETCH_MEMBER" });
+  // }
 
   handleInputChange = (event, inputProperty) => {
     console.log("Handling input-change...");

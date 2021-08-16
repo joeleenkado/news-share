@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 import { connect } from "react-redux";
-import "./Modal.css";
+import "./StoryModal.css";
 
-class Modal extends Component {
+class StoryModal extends Component {
   state = {
     //if inputs are empty the booleans will flip to true, error & helperText on inputs
     showStory: false,
@@ -18,12 +18,26 @@ class Modal extends Component {
 
   //   })
   // }//end handleModalChange
+  hideModal = () => {
+    this.setState({ showStory: false });
+    this.props.dispatch({ type: "FETCH_STORY" });
+  };
+
 
   render() {
-    const showHideClassName = this.props.showStoryProp
+   
+    const {showStoryProp, closeStoryProp} = this.props;
+
+   
+    const showHideClassName = showStoryProp
       ? "modal display-block"
       : "modal display-none";
-    const { classes } = this.props;
+    // const { classes } = this.props;
+
+
+
+
+ 
     const stories = this.props.store.story;
 
     return (
@@ -49,4 +63,4 @@ class Modal extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(Modal);
+export default connect(mapStoreToProps)(StoryModal);

@@ -145,9 +145,9 @@ class EditModal extends Component {
           the News Room
         </h3>
 
-        {story.length
+        {/* {story.length
           ? JSON.stringify(story[0])
-          : JSON.stringify(this.props.store)}
+          : JSON.stringify(this.props.store)} */}
 
         {story.length ? (
           <form
